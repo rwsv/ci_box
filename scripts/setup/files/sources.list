@@ -1,0 +1,18 @@
+#
+
+# deb cdrom:[Debian GNU/Linux 7.3.0 _Wheezy_ - Official amd64 NETINST Binary-1 20131215-04:55]/ wheezy main
+
+#deb cdrom:[Debian GNU/Linux 7.3.0 _Wheezy_ - Official amd64 NETINST Binary-1 20131215-04:55]/ wheezy main
+
+deb http://debian.c3sl.ufpr.br/debian/ wheezy main
+deb-src http://debian.c3sl.ufpr.br/debian/ wheezy main
+
+deb http://debian.c3sl.ufpr.br/debian-security/ wheezy/updates main
+deb-src http://debian.c3sl.ufpr.br/debian-security/ wheezy/updates main
+
+deb http://security.debian.org/ wheezy/updates main
+deb-src http://security.debian.org/ wheezy/updates main
+
+# wheezy-updates, previously known as 'volatile'
+deb http://debian.c3sl.ufpr.br/debian/ wheezy-updates main
+deb-src http://debian.c3sl.ufpr.br/debian/ wheezy-updates main
