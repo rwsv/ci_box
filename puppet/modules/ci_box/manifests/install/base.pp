@@ -5,6 +5,17 @@ class ci_box::install::base ($setup_path = $ci_box::setup_path, $home = $ci_box:
     source => "${setup_path}/files/sources.list"
   }
 
+  file { '/etc/apt/sources.list.d/jenkins.list':
+    owner  => 'root',
+    group  => 'root',
+    source => "${setup_path}/files/apt/jenkins.list",
+  }
+
+  exec { 'jenkins-public-key':
+    command => "${setup_path}/jenkins_public_key.sh",
+    creates => "${home}/.jenkins_public_key_done",
+  }
+
   exec { 'apt-update':
     command => 'apt-get -q -y update',
   }
@@ -55,6 +66,7 @@ class ci_box::install::base ($setup_path = $ci_box::setup_path, $home = $ci_box:
 
     'supervisor',
     'redis-server',
+    'jenkins',
     'rabbitmq-server',
     'amqp-tools',
     'jetty8',
